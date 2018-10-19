@@ -66,8 +66,8 @@ public class FoodListActivity extends AppCompatActivity
 
         View headerView = navigationView.getHeaderView(0);
 
-//        nav_User = (TextView) headerView.findViewById(R.id.Nav_UserName);
-//        nav_User.setText(Common.currentUser.getName());
+        nav_User = (TextView) headerView.findViewById(R.id.Nav_UserName_food);
+        nav_User.setText(Common.currentUser.getName());
         init();
     }
 
