@@ -38,6 +38,7 @@ public class HomeRepositoryImpl implements HomeRepository {
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                         String key = postSnapshot.getKey();
                         Category category = dataSnapshot.child(key).getValue(Category.class);
+                        category.setId(key);
                         list.add(category);
                         CustomLog.i("GetDATA" , "Key: " + key + " -- Value: "+ category.getName());
                     }

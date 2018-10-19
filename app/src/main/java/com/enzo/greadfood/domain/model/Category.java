@@ -1,7 +1,7 @@
 package com.enzo.greadfood.domain.model;
 
 public class Category {
-    private String name, url;
+    private String id, name, url;
 
     public Category() {
     }
@@ -9,6 +9,19 @@ public class Category {
     public Category(String name, String url) {
         this.name = name;
         this.url = url;
+    }
+
+    public Category(String id, String name, String url) {
+        this.name = name;
+        this.url = url;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

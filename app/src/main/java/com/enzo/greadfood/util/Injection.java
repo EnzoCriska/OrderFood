@@ -2,9 +2,11 @@ package com.enzo.greadfood.util;
 
 
 import com.enzo.greadfood.domain.executor.impl.ThreadExecutor;
+import com.enzo.greadfood.presentation.presenter.FoodListPresenter;
 import com.enzo.greadfood.presentation.presenter.HomePresenter;
 import com.enzo.greadfood.presentation.presenter.LoginPresenter;
 import com.enzo.greadfood.presentation.presenter.SignupPresenter;
+import com.enzo.greadfood.presentation.presenter.impl.FoodListPresenterImpl;
 import com.enzo.greadfood.presentation.presenter.impl.HomePresenterImpl;
 import com.enzo.greadfood.presentation.presenter.impl.LoginPresenterImp;
 import com.enzo.greadfood.presentation.presenter.impl.SignupPresenterImpl;
@@ -29,6 +31,10 @@ public class Injection {
 
     public HomePresenter getHomePresenter(HomePresenter.View view){
         return new HomePresenterImpl(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), view);
+    }
+
+    public FoodListPresenter getFoodListPresenter(FoodListPresenter.View view){
+        return new FoodListPresenterImpl(ThreadExecutor.getInstance(), MainThreadImpl.getInstance(), view);
     }
 
 }

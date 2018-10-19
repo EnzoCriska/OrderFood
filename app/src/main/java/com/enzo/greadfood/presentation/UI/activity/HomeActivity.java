@@ -1,6 +1,7 @@
 package com.enzo.greadfood.presentation.UI.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,7 +21,7 @@ import android.widget.Toast;
 
 import com.enzo.greadfood.R;
 import com.enzo.greadfood.domain.model.Category;
-import com.enzo.greadfood.presentation.UI.adapter.AdapterRecyclerView;
+import com.enzo.greadfood.presentation.UI.adapter.AdapterRecyclerViewCategory;
 import com.enzo.greadfood.presentation.presenter.HomePresenter;
 import com.enzo.greadfood.util.Common;
 import com.enzo.greadfood.util.CustomLog;
@@ -29,11 +30,11 @@ import com.enzo.greadfood.util.Injection;
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, AdapterRecyclerView.OnClickPhoto, HomePresenter.View {
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterRecyclerViewCategory.OnClickPhoto, HomePresenter.View {
     private TextView nav_User;
     private RecyclerView recyclerView;
     private ArrayList<Category> list = new ArrayList<>();
-    private AdapterRecyclerView adapter;
+    private AdapterRecyclerViewCategory adapter;
     private HomePresenter homePresenter;
     private ProgressDialog progressDialog;
     @Override
@@ -74,10 +75,10 @@ public class HomeActivity extends AppCompatActivity
     public void init(){
         progressDialog = new ProgressDialog(this);
         homePresenter = Injection.getInstance().getHomePresenter(this);
-        adapter = new AdapterRecyclerView(this, this);
+        adapter = new AdapterRecyclerViewCategory(this, this);
         recyclerView = findViewById(R.id.recyclerMenu);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        adapter .setiData(new AdapterRecyclerView.IData() {
+        adapter .setiData(new AdapterRecyclerViewCategory.IData() {
             @Override
             public int getCount() {
                 return list.size();
@@ -134,12 +135,13 @@ public class HomeActivity extends AppCompatActivity
 
         if (id == R.id.menu) {
             // Handle the mebu action
+            Toast.makeText(this, "Menu", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_card) {
-
+            Toast.makeText(this, "Card", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_orders) {
-
+            Toast.makeText(this, "Order", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.log_out) {
-
+            Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -149,7 +151,10 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public void onClickItemPhoto(int position) {
-        CustomLog.i("HOME", "View details");
+        CustomLog.i("HOME", "View details "+ list.get(position).getName() + " ID " + list.get(position).getId());
+        Intent intent = new Intent(HomeActivity.this, FoodListActivity.class);
+        intent.putExtra("Menu_Id", list.get(position).getId());
+        startActivity(intent);
     }
 
     @Override

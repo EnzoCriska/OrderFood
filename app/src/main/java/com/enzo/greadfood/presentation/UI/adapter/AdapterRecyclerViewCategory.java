@@ -15,13 +15,13 @@ import com.enzo.greadfood.R;
 import com.enzo.greadfood.domain.model.Category;
 import com.squareup.picasso.Picasso;
 
-public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolder> {
+public class AdapterRecyclerViewCategory extends RecyclerView.Adapter<AdapterRecyclerViewCategory.ViewHolder> {
     private IData iData;
     private OnClickPhoto onClickPhoto;
     private String TAG = "Adapter RecyclerView";
     private Context context;
 
-    public AdapterRecyclerView( OnClickPhoto onClickPhoto, Context context) {
+    public AdapterRecyclerViewCategory(OnClickPhoto onClickPhoto, Context context) {
         this.onClickPhoto = onClickPhoto;
         this.context = context;
     }

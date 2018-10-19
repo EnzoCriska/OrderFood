@@ -1,4 +1,9 @@
 package com.enzo.greadfood.domain.repository;
 
-public class FoodListRepository {
+import com.enzo.greadfood.domain.model.Food;
+
+import java.util.ArrayList;
+
+public interface FoodListRepository {
+    ArrayList<Food> getFoodList();
 }
