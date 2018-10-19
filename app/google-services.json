@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "811353546794",
+    "firebase_url": "https://greadfood-af682.firebaseio.com",
+    "project_id": "greadfood-af682",
+    "storage_bucket": "greadfood-af682.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811353546794:android:14dba5b92bf57814",
+        "android_client_info": {
+          "package_name": "com.enzo.greadfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811353546794-54sdup1nb98dgq86jp7egeu01usvjp1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.enzo.greadfood",
+            "certificate_hash": "1b7dab7eb925124f4482432bcac61e8ef1f1779d"
+          }
+        },
+        {
+          "client_id": "811353546794-o4fft978tu4v91ldnia2e498s3ek5rkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbzkKiME-_D0hl4zb_WIszgjTWxQhHw30"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811353546794-o4fft978tu4v91ldnia2e498s3ek5rkj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
